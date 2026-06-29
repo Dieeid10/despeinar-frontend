@@ -142,3 +142,12 @@ export interface Asiento {
     numero_asiento: string
     precio_base: number
 }
+
+export interface ServicioReserva {
+  service_id: number
+  reservation_id: number
+  nombre: string
+  descripcion?: string
+  precio: number
+  estado?: string
+}
