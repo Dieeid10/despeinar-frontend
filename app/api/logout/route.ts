@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export async function POST() {
   try {
     const cookieStore = cookies()
-    const token = cookieStore.get('apiToken')
+    const token = await cookieStore.get('apiToken')
 
     if (!token) {
       return NextResponse.json({ message: 'Not logged in' }, { status: 401 })

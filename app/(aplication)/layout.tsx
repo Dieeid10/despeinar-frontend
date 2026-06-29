@@ -6,7 +6,7 @@ import './layout.css'
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
    const cookieStore = await cookies()
-    const token = cookieStore.get('apiToken')?.value
+    const token = await cookieStore.get('apiToken')?.value
 
     if (!token) {
         redirect('/')
